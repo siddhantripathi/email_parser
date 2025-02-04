@@ -1,1 +1,8 @@
- 
+{
+  "name": "email-parser",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "python -m uvicorn email_parser.main:app --host 0.0.0.0 --port 8000",
+    "vercel-build": "pip install -r requirements.txt"
+  }
+} 

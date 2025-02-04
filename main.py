@@ -2,10 +2,12 @@ from fastapi import FastAPI, Request, Form, HTTPException
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
-from parser import EmailParser
-from database import Database, JSONEncoder
+from .parser import EmailParser
+from .database import Database
 import json
+import os
 
 # Get the current directory
 BASE_DIR = Path(__file__).resolve().parent
@@ -14,6 +16,15 @@ app = FastAPI(
     title="Email Parser API",
     description="API for parsing meeting-related emails",
     version="1.0.0"
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Mount templates and static files
@@ -81,6 +92,9 @@ async def parse_email(request: Request):
             status_code=500
         )
 
+# Only run uvicorn server in development
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True) 
+    # Check if running in development
+    if os.getenv("VERCEL_ENV") is None:
+        uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True) 
