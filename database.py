@@ -5,40 +5,36 @@ from typing import List, Dict, Any
 from bson import ObjectId
 import asyncio
 import re
+import logging
+import os
+
+logger = logging.getLogger(__name__)
 
 class JSONEncoder(json.JSONEncoder):
     def default(self, obj):
-        if isinstance(obj, (datetime, ObjectId)):
-            return str(obj)
-        return super().default(obj)
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        return json.JSONEncoder.default(self, obj)
 
 class Database:
     client = None
     db = None
-    MONGODB_URL = 'mongodb://localhost:27017'
-    DB_NAME = 'email_parser'
 
     @classmethod
     async def connect_db(cls):
+        """Connect to MongoDB"""
         try:
-            if cls.client is None:
-                cls.client = AsyncIOMotorClient(
-                    cls.MONGODB_URL,
-                    serverSelectionTimeoutMS=5000  # 5 second timeout
-                )
-                # Verify connection
-                await cls.client.admin.command('ping')
-                cls.db = cls.client[cls.DB_NAME]
-                print(f"Successfully connected to MongoDB at {cls.MONGODB_URL}")
-                
-                # Create indexes if needed
-                await cls.create_indexes()
-            return True
+            # Get MongoDB URI from environment variable
+            mongodb_uri = os.getenv('MONGODB_URI', 'mongodb://localhost:27017')
+            cls.client = AsyncIOMotorClient(mongodb_uri)
+            cls.db = cls.client.email_parser
+            logger.info("Connected to MongoDB")
+            
+            # Create indexes if needed
+            await cls.create_indexes()
         except Exception as e:
-            print(f"MongoDB connection error: {e}")
-            cls.client = None
-            cls.db = None
-            return False
+            logger.error(f"Failed to connect to MongoDB: {e}")
+            raise
 
     @classmethod
     async def create_indexes(cls):
@@ -49,9 +45,9 @@ class Database:
             await cls.db.responses.create_index("reply_type")
             await cls.db.responses.create_index("thread_id")  # New index for thread tracking
             await cls.db.responses.create_index("subject")
-            print("Indexes created successfully")
+            logger.info("Indexes created successfully")
         except Exception as e:
-            print(f"Error creating indexes: {e}")
+            logger.error(f"Error creating indexes: {e}")
 
     @classmethod
     async def verify_connection(cls):
@@ -67,7 +63,7 @@ class Database:
     @classmethod
     def _normalize_subject(cls, subject: str) -> str:
         """Normalize subject by removing Re:, Fwd:, etc. and whitespace"""
-        subject = re.sub(r'^(?:Re|Fwd|Fw):\s*', '', subject, flags=re.IGNORECASE)
+        subject = re.sub(r'^(?:Re|Fwd|etc):\s*', '', subject, flags=re.IGNORECASE)
         return subject.strip().lower()
 
     @classmethod
@@ -103,6 +99,7 @@ class Database:
 
     @classmethod
     async def save_responses(cls, responses: List[Dict[str, Any]], thread_id: str = None) -> Dict[str, Any]:
+        """Save parsed email responses to MongoDB"""
         try:
             if cls.client is None:
                 await cls.connect_db()
@@ -119,16 +116,24 @@ class Database:
                 # Add thread_id and timestamps to response
                 response['thread_id'] = current_thread_id
                 response['created_at'] = datetime.utcnow()
+                response['updated_at'] = datetime.utcnow()
                 processed_responses.append(response)
 
             # Insert all responses
             result = await cls.db.responses.insert_many(processed_responses)
-            print(f"Saved {len(result.inserted_ids)} documents to MongoDB")
+            logger.info(f"Saved {len(result.inserted_ids)} documents to MongoDB")
 
             # Fetch and return the saved documents
             saved_docs = await cls.db.responses.find({
                 '_id': {'$in': result.inserted_ids}
             }).to_list(length=None)
+
+            # Convert ObjectIds to strings for JSON serialization
+            for doc in saved_docs:
+                doc['_id'] = str(doc['_id'])
+                doc['thread_id'] = str(doc['thread_id'])
+                if 'created_at' in doc:
+                    doc['created_at'] = doc['created_at'].isoformat()
 
             return {
                 "status": "success",
@@ -138,13 +143,8 @@ class Database:
             }
 
         except Exception as e:
-            print(f"Error saving to MongoDB: {e}")
-            return {
-                "status": "error",
-                "message": str(e),
-                "count": 0,
-                "data": []
-            }
+            logger.error(f"Failed to save responses: {e}")
+            raise
 
     @classmethod
     async def get_thread_responses(cls, thread_id: str) -> Dict[str, Any]:
@@ -156,6 +156,10 @@ class Database:
             cursor = cls.db.responses.find({"thread_id": thread_id}).sort("created_at", 1)
             responses = await cursor.to_list(length=None)
 
+            # Convert ObjectIds to strings
+            for response in responses:
+                response['_id'] = str(response['_id'])
+
             return {
                 "status": "success",
                 "thread_id": thread_id,
@@ -164,12 +168,8 @@ class Database:
             }
 
         except Exception as e:
-            return {
-                "status": "error",
-                "message": str(e),
-                "count": 0,
-                "data": []
-            }
+            logger.error(f"Failed to get thread responses: {e}")
+            raise
 
     @classmethod
     def _prepare_response(cls, documents: List[Dict]) -> List[Dict]:
@@ -183,32 +183,44 @@ class Database:
 
     @classmethod
     async def get_responses(cls, limit: int = 10) -> Dict[str, Any]:
-        """Get recent responses with error handling"""
+        """Get recent responses"""
         try:
-            if not await cls.verify_connection():
-                if not await cls.connect_db():
-                    raise Exception("Could not establish MongoDB connection")
+            if cls.client is None:
+                await cls.connect_db()
 
             cursor = cls.db.responses.find().sort('created_at', -1).limit(limit)
-            responses = await cursor.to_list(length=limit)
+            responses = await cursor.to_list(length=None)
             
+            # Convert ObjectIds to strings
+            for response in responses:
+                response['_id'] = str(response['_id'])
+
             return {
                 "status": "success",
                 "count": len(responses),
+                "thread_id": None,
                 "data": json.loads(json.dumps(responses, cls=JSONEncoder))
             }
         except Exception as e:
-            return {
-                "status": "error",
-                "message": str(e),
-                "count": 0,
-                "data": []
-            }
+            logger.error(f"Failed to get responses: {e}")
+            raise
 
     @classmethod
     async def close_db(cls):
-        if cls.client:
+        """Close MongoDB connection"""
+        if cls.client is not None:
             cls.client.close()
             cls.client = None
             cls.db = None
-            print("Disconnected from MongoDB") 
+            logger.info("Closed MongoDB connection")
+
+    @classmethod
+    async def verify_connection(cls):
+        """Verify database connection is active"""
+        try:
+            if cls.client:
+                await cls.client.admin.command('ping')
+                return True
+            return False
+        except Exception:
+            return False 

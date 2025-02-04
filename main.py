@@ -4,6 +4,7 @@ from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 from parser import EmailParser
+from database import Database, JSONEncoder
 import json
 
 # Get the current directory
@@ -20,6 +21,14 @@ templates = Jinja2Templates(directory=str(BASE_DIR / "templates"))
 app.mount("/static", StaticFiles(directory=str(BASE_DIR / "static")), name="static")
 
 email_parser = EmailParser()
+
+@app.on_event("startup")
+async def startup_db_client():
+    await Database.connect_db()
+
+@app.on_event("shutdown")
+async def shutdown_db_client():
+    await Database.close_db()
 
 @app.get("/", response_class=HTMLResponse)
 async def read_root(request: Request):
@@ -59,8 +68,12 @@ async def parse_email(request: Request):
 
         # Parse the email
         parsed_data = email_parser.parse_email(email_text)
-        return JSONResponse(content=parsed_data)
-            
+        
+        # Save to database
+        saved_data = await Database.save_responses([parsed_data])
+        
+        return JSONResponse(content=saved_data)
+
     except Exception as e:
         print(f"Error processing request: {str(e)}")
         return JSONResponse(

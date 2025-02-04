@@ -224,25 +224,29 @@
 
         .human-readable {
             padding: 2rem;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text);
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         .info-line {
             display: flex;
-            margin-bottom: 1rem;
-            animation: slideIn 0.3s ease-out;
+            align-items: baseline;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .info-label {
+            min-width: 140px;
             font-weight: 600;
             color: var(--primary);
-            margin-right: 0.5rem;
         }
 
         .info-value {
+            flex: 1;
             color: var(--text);
+            font-size: 1.1rem;
         }
 
         .info-value.empty {
@@ -252,19 +256,36 @@
 
         .info-value.link {
             color: var(--primary);
-            text-decoration: underline;
             cursor: pointer;
+            text-decoration: underline;
         }
 
-        @keyframes slideIn {
-            from {
-                transform: translateX(-10px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+        .additional-info {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 6px;
+        }
+
+        .time-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.5rem 0;
+        }
+
+        .time-list li {
+            padding: 0.25rem 0;
+            color: var(--text);
+        }
+
+        .uncertainty-tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: #fee2e2;
+            color: #991b1b;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -283,6 +304,10 @@
                 <span class="info-value" id="time-value"></span>
             </div>
             <div class="info-line">
+                <span class="info-label">Original time:</span>
+                <span class="info-value" id="original-time-value"></span>
+            </div>
+            <div class="info-line">
                 <span class="info-label">Response type:</span>
                 <span class="info-value" id="response-value"></span>
             </div>
@@ -293,6 +318,12 @@
             <div class="info-line">
                 <span class="info-label">Delegated to:</span>
                 <span class="info-value" id="delegate-value"></span>
+            </div>
+            <div class="info-line">
+                <span class="info-label">Alternative times:</span>
+                <div class="info-value">
+                    <ul class="time-list" id="alt-times-list"></ul>
+                </div>
             </div>
             <div class="info-line">
                 <span class="info-label">Notes:</span>
@@ -323,7 +354,9 @@
                     })
                 });
                 
-                const data = await response.json();
+                const responseData = await response.json();
+                // Extract the actual data from the database response
+                const data = responseData.data ? responseData.data[0] : responseData;
                 
                 // Format the proposed time to be more readable
                 const formatTime = (isoTime) => {
@@ -335,27 +368,50 @@
                         month: 'long',
                         day: 'numeric',
                         hour: 'numeric',
-                        minute: 'numeric'
+                        minute: 'numeric',
+                        hour12: true
                     });
                 };
 
                 // Update human-readable values
                 document.getElementById('time-value').textContent = 
                     formatTime(data.proposed_time);
+                document.getElementById('original-time-value').textContent = 
+                    formatTime(data.additional_info?.original_time);
+                
+                // Format reply type with confidence score
+                const replyType = data.reply_type;
+                const confidence = data.reply_type_scores?.[replyType] || 0;
                 document.getElementById('response-value').textContent = 
-                    data.reply_type ? data.reply_type.replace(/_/g, ' ') : 'Not specified';
+                    `${replyType?.replace(/_/g, ' ')} (${(confidence * 100).toFixed(1)}% confidence)`;
                 
                 const linkElement = document.getElementById('link-value');
                 if (data.meeting_link) {
                     linkElement.textContent = data.meeting_link;
                     linkElement.onclick = () => window.open(data.meeting_link, '_blank');
+                    linkElement.classList.remove('empty');
                 } else {
                     linkElement.textContent = 'Not specified';
                     linkElement.onclick = null;
+                    linkElement.classList.add('empty');
                 }
                 
                 document.getElementById('delegate-value').textContent = 
                     data.delegate_to || 'Not specified';
+                
+                // Handle alternative times
+                const timesList = document.getElementById('alt-times-list');
+                timesList.innerHTML = '';
+                if (data.additional_info?.proposed_times?.length > 0) {
+                    data.additional_info.proposed_times.forEach(time => {
+                        const li = document.createElement('li');
+                        li.textContent = formatTime(time);
+                        timesList.appendChild(li);
+                    });
+                } else {
+                    timesList.innerHTML = '<li class="empty">No alternative times suggested</li>';
+                }
+                
                 document.getElementById('notes-value').textContent = 
                     data.additional_notes || 'No additional notes';
 
@@ -369,7 +425,7 @@
 
                 // Update full JSON response
                 document.querySelector('.result-full pre').textContent = 
-                    JSON.stringify(data, null, 2);
+                    JSON.stringify(responseData, null, 2);
                     
                 document.querySelector('.result-container').style.display = 'block';
                 
