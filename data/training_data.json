@@ -1,0 +1,1544 @@
+[
+    {
+        "text": "From: raj.kumar@company.com\nTo: zara.smith@organizer.com\nSubject: Re: Meeting with John\n\nHi Zara,\n\nThanks for reaching out. I'd be happy to meet with John. I'm available on Thursday at 3 PM.\nHere's my calendly link: https://calendly.com/rajkumar for scheduling.\n\nLooking forward to our conversation.\n\nBest,\nRaj",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 26, "FROM_EMAIL"],
+            [31, 53, "TO_EMAIL"],
+            [147, 163, "DATE_TIME"],
+            [184, 211, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: michael.chen@tech.com\nTo: zara.smith@organizer.com\nSubject: Re: Project Discussion Meeting\n\nHi Zara,\n\nUnfortunately, I can't make it on Tuesday at 2 PM. Would either Wednesday at 11 AM \nor Thursday at 4 PM work better? You can check my availability here: \nhttps://calendly.com/michaelchen.\n\nBest regards,\nMichael",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 27, "FROM_EMAIL"],
+            [32, 54, "TO_EMAIL"],
+            [106, 120, "DATE_TIME"],
+            [128, 143, "DATE_TIME"],
+            [147, 161, "DATE_TIME"],
+            [207, 237, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: sarah.jones@corp.com\nTo: zara.smith@organizer.com\nSubject: Re: Quarterly Review Meeting\n\nHi Zara,\n\nI'll be on vacation next week. Please coordinate with my assistant Amy \n(amy.assistant@corp.com) who will attend in my place. She has access to my calendar\nand can schedule the meeting.\n\nThanks,\nSarah",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 25, "FROM_EMAIL"],
+            [30, 52, "TO_EMAIL"],
+            [159, 179, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: david.wilson@company.com\nTo: zara.smith@organizer.com\nSubject: Re: Strategy Meeting\n\nHi Zara,\n\nI see the invitation for Monday at 10 AM. Before confirming, could you please \nshare the meeting agenda and any materials we should review beforehand? Also, \nwill this be a virtual or in-person meeting?\n\nThanks,\nDavid",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 1.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 30, "FROM_EMAIL"],
+            [35, 57, "TO_EMAIL"],
+            [89, 103, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: lisa.zhang@tech.com\nTo: zara.smith@organizer.com\nSubject: Re: Product Review Meeting\n\nHi Zara,\n\nI apologize, but I won't be able to attend the meeting on Friday at 1 PM due to a \nconflicting commitment. Perhaps we can reschedule for next week?\n\nBest regards,\nLisa",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 1.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 25, "FROM_EMAIL"],
+            [30, 52, "TO_EMAIL"],
+            [116, 130, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: alex.brown@company.com\nTo: zara.smith@organizer.com\nSubject: Re: Team Sync\n\nHi Zara,\n\nFor this quarter's review, my deputy Tom (tom.deputy@company.com) will be leading \nthe discussion. He's already updated his availability on \nhttps://calendly.com/tomdeputy/review.\n\nBest,\nAlex",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 28, "FROM_EMAIL"],
+            [33, 55, "TO_EMAIL"],
+            [107, 128, "EMAIL"],
+            [185, 221, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: john.doe@company.com\nTo: meetings@org.com\nSubject: Confirming Project Kickoff Meeting\n\nHi Team,\n\nI'm available for the proposed time on Monday, August 7th at 10:00 AM PST.\nPlease proceed with scheduling. My Calendly link: https://calendly.com/johndoe.\n\nBest regards,\nJohn",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 22, "FROM_EMAIL"],
+            [27, 43, "TO_EMAIL"],
+            [86, 112, "DATE_TIME"],
+            [156, 182, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: sarah.connor@tech.io\nTo: scheduler@events.co\nSubject: Availability Confirmation\n\nHi Scheduling Team,\n\nBoth Wednesday at 2 PM EST and Friday at 11 AM EST work for me.\nYou can book through my calendar: https://calendly.com/sconnor.\n\nBest,\nSarah",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 26, "FROM_EMAIL"],
+            [31, 50, "TO_EMAIL"],
+            [93, 113, "DATE_TIME"],
+            [118, 137, "DATE_TIME"],
+            [171, 197, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: ceo@company.com\nTo: ea@executive.com\nSubject: Board Meeting Confirmation\n\nJessica,\n\nPlease confirm my attendance for the September 15th board meeting at 3:30 PM CET.\nI've blocked my calendar accordingly. Use my private booking link: \nhttps://calendly.com/executive-private.\n\nRegards,\nMichael",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 19, "FROM_EMAIL"],
+            [24, 39, "TO_EMAIL"],
+            [95, 121, "DATE_TIME"],
+            [180, 213, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: emily.wang@client.com\nTo: sales@company.com\nSubject: RE: Product Demo Scheduling\n\nHi Sales Team,\n\nThe proposed time on Thursday at 1:30 PM GMT+1 works perfectly.\nPlease use my client portal for confirmation: \nhttps://client.company.com/booking/emilyw.\n\nBest,\nEmily Wang",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 25, "FROM_EMAIL"],
+            [30, 46, "TO_EMAIL"],
+            [95, 117, "DATE_TIME"],
+            [173, 208, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: prof.smith@university.edu\nTo: conference@academic.org\nSubject: Keynote Speaker Confirmation\n\nDear Organizers,\n\nI confirm my availability for the October 12th keynote address at 9:00 AM EDT.\nMy university calendar link: https://university.booking/profsmith.\n\nLooking forward to the event,\nProf. Jane Smith",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 31, "FROM_EMAIL"],
+            [36, 60, "TO_EMAIL"],
+            [104, 131, "DATE_TIME"],
+            [170, 203, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: patient123@healthcare.com\nTo: appointments@clinic.org\nSubject: RE: Follow-up Appointment\n\nHello Clinic Team,\n\nI confirm my availability for November 3rd at 2:15 PM. \nThe patient portal shows my confirmed slot: \nhttps://healthconnect.clinic/patient123.\n\nThank you,\nJames Wilson",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 31, "FROM_EMAIL"],
+            [36, 59, "TO_EMAIL"],
+            [102, 122, "DATE_TIME"],
+            [169, 205, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: candidate@jobsearch.com\nTo: hr@techcompany.com\nSubject: RE: Technical Interview Slot\n\nDear Hiring Team,\n\nI confirm my attendance for the technical interview on Friday, September 8th at 10:00 AM PST.\nThe Google Calendar invite has been accepted.\n\nBest regards,\nAlex Johnson",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 27, "FROM_EMAIL"],
+            [32, 52, "TO_EMAIL"],
+            [107, 142, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: client.lee@lawfirm.com\nTo: appointments@legal.com\nSubject: Confirming Consultation\n\nHi Legal Team,\n\nI accept the proposed consultation time on Wednesday at 3:00 PM EST.\nMy case portal shows the confirmed booking: \nhttps://secure.legal.com/client-portal.\n\nSincerely,\nDavid Lee",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 25, "FROM_EMAIL"],
+            [30, 52, "TO_EMAIL"],
+            [105, 126, "DATE_TIME"],
+            [173, 204, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: attendee@webinar.com\nTo: events@techsummit.com\nSubject: RE: Panel Discussion Attendance\n\nHi Event Coordinators,\n\nI confirm my participation in the November 15th virtual panel at 4:30 PM UTC.\nThe Zoom link has been added to my calendar.\n\nBest,\nSarah Miller",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 24, "FROM_EMAIL"],
+            [29, 51, "TO_EMAIL"],
+            [106, 134, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: buyer@realestate.com\nTo: agent@properties.com\nSubject: Property Tour Confirmation\n\nHi Mark,\n\nI'll be available for the Friday 3 PM showing at 123 Main Street.\nMy partner's availability is synced here: \nhttps://calendly.com/home-buyers.\n\nThanks,\nEmily Chen",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 27, "FROM_EMAIL"],
+            [32, 51, "TO_EMAIL"],
+            [90, 103, "DATE_TIME"],
+            [164, 192, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: teamlead@company.com\nTo: dev-team@company.com\nSubject: Sprint Planning Confirmed\n\nTeam,\n\nThe Wednesday 10 AM sprint planning meeting works for everyone.\nCalendar invites have been accepted by all team members.\n\nBest,\nAlex",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 25, "FROM_EMAIL"],
+            [30, 50, "TO_EMAIL"],
+            [87, 105, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: investor@vc.com\nTo: founders@startup.com\nSubject: Series A Discussion Confirmed\n\nHi Founders,\n\nI confirm my availability for December 5th at 2:00 PM PST.\nMy assistant has shared calendar access via: \nhttps://calendly.com/vc-meetings.\n\nLooking forward,\nJames Wilson",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 20, "FROM_EMAIL"],
+            [25, 44, "TO_EMAIL"],
+            [89, 113, "DATE_TIME"],
+            [162, 191, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: student@university.edu\nTo: advisor@department.edu\nSubject: Office Hours Confirmation\n\nProfessor Smith,\n\nI've registered for your Friday 11 AM office hours slot.\nThe university scheduling system shows my confirmed spot.\n\nBest,\nMichael Brown",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 27, "FROM_EMAIL"],
+            [32, 58, "TO_EMAIL"],
+            [97, 115, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: official@agency.gov\nTo: publicmeetings@city.gov\nSubject: Public Forum Confirmation\n\nMeeting Coordinators,\n\nI confirm my attendance for the March 20th public forum at 6:30 PM.\nThe city portal indicates successful registration.\n\nSincerely,\nSarah Johnson",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 23, "FROM_EMAIL"],
+            [28, 52, "TO_EMAIL"],
+            [97, 121, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: volunteer@nonprofit.org\nTo: events@charity.org\nSubject: Gala Volunteer Shift Confirmation\n\nHi Event Team,\n\nI confirm my 7 PM shift on Saturday, April 22nd.\nThe volunteer portal shows my schedule: \nhttps://volunteer.charity.org/shifts.\n\nThank you,\nRachel Green",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 28, "FROM_EMAIL"],
+            [33, 52, "TO_EMAIL"],
+            [87, 113, "DATE_TIME"],
+            [164, 195, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: reporter@news.com\nTo: pr@company.com\nSubject: Product Launch Attendance\n\nPR Team,\n\nI'll be attending the 10 AM press conference on January 15th.\nMedia credentials confirmed via your event portal.\n\nRegards,\nJohn Thompson",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 23, "FROM_EMAIL"],
+            [28, 41, "TO_EMAIL"],
+            [70, 97, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: parent@school.org\nTo: teacher@school.org\nSubject: Conference Time Confirmed\n\nMs. Rodriguez,\n\nWe confirm our 3:45 PM slot on Thursday, November 2nd.\nThe school's parent portal shows the booking.\n\nThank you,\nThe Carter Family",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 22, "FROM_EMAIL"],
+            [27, 44, "TO_EMAIL"],
+            [79, 105, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: traveler@agency.com\nTo: airline@reservations.com\nSubject: Flight Change Accepted\n\nReservations Team,\n\nI accept the rebooked flight on AA 237 for December 14th at 8:00 AM EST.\nThe updated itinerary is visible in my account: \nhttps://airline.com/manage-booking.",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 25, "FROM_EMAIL"],
+            [30, 54, "TO_EMAIL"],
+            [89, 115, "DATE_TIME"],
+            [172, 202, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: it@company.com\nTo: sales@software.com\nSubject: Technical Demo Confirmation\n\nHi Solutions Team,\n\nWe confirm our team's availability for the April 5th technical demo at 1:30 PM GMT.\nThe Zoom link has been distributed internally.\n\nIT Director,\nMark Johnson",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 18, "FROM_EMAIL"],
+            [23, 43, "TO_EMAIL"],
+            [98, 125, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: vip@celebrity.com\nTo: invitations@events.com\nSubject: Gala Attendance Confirmation\n\nEvent Coordinator,\n\nI confirm my attendance for the September 10th charity gala at 7:30 PM.\nMy assistant has completed the RSVP through your secure portal.\n\nBest,\nEmma Watson",
+        "cats": {
+            "acceptance": 1.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 22, "FROM_EMAIL"],
+            [27, 49, "TO_EMAIL"],
+            [94, 120, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: jennifer.lee@corp.com\nTo: meetings@org.com\nSubject: Request to Reschedule Project Review\n\nHi Team,\n\nCould we move our March 10th 2 PM meeting to March 12th at 11 AM?\nI have a conflict with a client demo. Alternative slots: \nhttps://calendly.com/jennifer-lee/reschedule.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 26, "FROM_EMAIL"],
+            [31, 47, "TO_EMAIL"],
+            [75, 89, "DATE_TIME"],
+            [94, 110, "DATE_TIME"],
+            [169, 205, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: project.manager@techfirm.com\nTo: stakeholders@company.com\nSubject: Sprint Demo Delegation  \n\nHi Team,  \n\nI won't be able to present in Friday's sprint review due to an urgent client issue.  \nCan you coordinate with either Lisa (lisa@techfirm.com) or Greg (greg@techfirm.com) to take over the presentation?  \n\nThanks,  \nPM",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 33, "FROM_EMAIL"],
+            [38, 63, "TO_EMAIL"],
+            [111, 125, "DATE_TIME"],
+            [182, 200, "EMAIL"],
+            [204, 221, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: dr.alex@hospital.org\nTo: admin@medical.com\nSubject: Rescheduling Surgical Case Review  \n\nHi,  \n\nI will be out of town for a conference on March 8th and won't be able to attend our 9 AM review.  \nWould it be possible to move it to March 11th at the same time?  \nIf not, I am free on March 12th after 2 PM.  \n\nBest,  \nDr. Alex",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 26, "FROM_EMAIL"],
+            [31, 50, "TO_EMAIL"],
+            [98, 113, "DATE_TIME"],
+            [161, 176, "DATE_TIME"],
+            [204, 221, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: vp.sales@enterprise.com\nTo: sales.team@enterprise.com\nSubject: Delegation of Client Onboarding  \n\nHi Team,  \n\nI won't be available for next week's client onboarding call.  \nIf Alex (alex@enterprise.com) is free, he should take the lead.  \nOtherwise, Mark (mark@enterprise.com), can you step in?  \n\nLet me know who will handle it.  \n\nBest,  \nVP Sales",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 27, "FROM_EMAIL"],
+            [32, 55, "TO_EMAIL"],
+            [117, 134, "EMAIL"],
+            [163, 180, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: liam.cfo@financecorp.com\nTo: board@corporate.com\nSubject: Re: Quarterly Financial Review Timing  \n\nHi All,  \n\nI just realized our scheduled review on May 6th at 2 PM clashes with my flight.  \nWould it be possible to push it back a few hours, or should we move to May 7th?  \n\nBest,  \nLiam",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 29, "FROM_EMAIL"],
+            [34, 55, "TO_EMAIL"],
+            [97, 116, "DATE_TIME"],
+            [174, 185, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: hr.director@company.com\nTo: hiring@company.com\nSubject: Interview Delegation  \n\nHello,  \n\nI need someone from the hiring team to take over Thursday's interview at 10 AM.  \nI've spoken to the candidate, and they're okay with a different interviewer,  \nbut please check with the VP before confirming.  \n\nThanks,  \nHR Director",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 31, "FROM_EMAIL"],
+            [36, 54, "TO_EMAIL"],
+            [98, 121, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: daniel@researchlab.org\nTo: team@researchlab.org\nSubject: Rescheduling Experiment Briefing  \n\nHi Team,  \n\nOur meeting for February 20th at 3 PM should be moved,  \nbut I'm not sure if February 21st at 4 PM or February 19th at 2 PM works best.  \nCan you confirm availability?  \n\nThanks,  \nDaniel",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 1.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 28, "FROM_EMAIL"],
+            [33, 52, "TO_EMAIL"],
+            [69, 90, "DATE_TIME"],
+            [128, 148, "DATE_TIME"],
+            [153, 172, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: raj.patel@healthcare.org\nTo: appointments@clinic.com\nSubject: Rescheduling Patient Consultation\n\nHi Scheduling Team,\n\nWould either Wednesday at 3 PM or Friday morning work instead of Tuesday's 1 PM slot?\nMy updated availability: https://calendly.com/dr-rajpatel.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 28, "FROM_EMAIL"],
+            [33, 56, "TO_EMAIL"],
+            [104, 118, "DATE_TIME"],
+            [123, 138, "DATE_TIME"],
+            [143, 155, "DATE_TIME"],
+            [190, 218, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: ceo@company.com\nTo: ea@board.com\nSubject: Board Meeting Rescheduling\n\nEmily,\n\nPlease move the Q2 review from April 5th to April 12th at 9:30 AM EST.\nI'll be returning from Asia that week. Private calendar: \nhttps://calendly.com/executive-reschedule.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 19, "FROM_EMAIL"],
+            [24, 37, "TO_EMAIL"],
+            [73, 89, "DATE_TIME"],
+            [94, 115, "DATE_TIME"],
+            [173, 207, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: dev.team@tech.io\nTo: product@company.com\nSubject: Sprint Planning Reschedule Request\n\nProduct Team,\n\nWe need to push back Friday's 10 AM sprint planning to 2 PM due to  \nsystem maintenance. Our availability: https://calendly.com/dev-team.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 21, "FROM_EMAIL"],
+            [26, 45, "TO_EMAIL"],
+            [85, 99, "DATE_TIME"],
+            [104, 112, "DATE_TIME"],
+            [158, 188, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: prof.smith@university.edu\nTo: department@academia.org\nSubject: Lecture Time Change Request\n\nDear Colleagues,\n\nCould we move the March 15th guest lecture from 3 PM to 10 AM?\nI have a faculty meeting conflict. Updated availability: \nhttps://uni-scheduling.edu/profsmith.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 31, "FROM_EMAIL"],
+            [36, 59, "TO_EMAIL"],
+            [95, 115, "DATE_TIME"],
+            [120, 132, "DATE_TIME"],
+            [196, 227, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: patient@clinic.org\nTo: appointments@healthcare.com\nSubject: Re: Follow-up Appointment\n\nHello,\n\nI need to reschedule my November 8th 4 PM appointment to November 10th morning.\nAvailable slots: https://patientportal.healthcare.com.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 25, "FROM_EMAIL"],
+            [30, 56, "TO_EMAIL"],
+            [89, 109, "DATE_TIME"],
+            [114, 135, "DATE_TIME"],
+            [165, 199, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: global@client.com\nTo: coordinator@meetings.com\nSubject: Time Zone Conflict Resolution\n\nHi Team,\n\nDue to DST changes, can we move our Wednesday 9 AM GMT meeting to 11 AM GMT?\nMy current local time would be 2 AM otherwise. Alternatives: \nhttps://calendly.com/global-client.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 23, "FROM_EMAIL"],
+            [28, 52, "TO_EMAIL"],
+            [95, 114, "DATE_TIME"],
+            [119, 133, "DATE_TIME"],
+            [197, 225, "MEETING_LINK"]
+        ]
+    },
+    
+    {
+        "text": "From: attorney@lawfirm.com\nTo: client@legal.com\nSubject: Deposition Date Change\n\nDear Client,\n\nWe request to move the deposition from March 22nd 1:30 PM to March 24th 10 AM.\nCourtroom availability: https://courtscheduler.law/depositions.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 24, "FROM_EMAIL"],
+            [29, 44, "TO_EMAIL"],
+            [83, 103, "DATE_TIME"],
+            [108, 129, "DATE_TIME"],
+            [167, 200, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: speaker@events.com\nTo: organizers@conference.com\nSubject: Keynote Time Adjustment\n\nHi Team,\n\nCould we shift my keynote from Day 1 9 AM to Day 2 2 PM?\nI have travel delays. Updated availability: \nhttps://speaker-calendar.com/reschedule.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 22, "FROM_EMAIL"],
+            [27, 52, "TO_EMAIL"],
+            [91, 104, "DATE_TIME"],
+            [109, 122, "DATE_TIME"],
+            [177, 211, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: parent@family.com\nTo: teacher@school.edu\nSubject: Rescheduling Parent-Teacher Conference\n\nMs. Rodriguez,\n\nDue to a family emergency, can we move our March 5th 4 PM meeting to next week?\nAvailable times: https://school-portal.com/parents.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 21, "FROM_EMAIL"],
+            [26, 43, "TO_EMAIL"],
+            [103, 119, "DATE_TIME"],
+            [153, 184, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: engineer@tech.com\nTo: sales@software.com\nSubject: Rescheduling API Demo\n\nHi Sales Team,\n\nWe need to postpone tomorrow's 2 PM demo to Thursday at 10 AM due to  \na critical bug. Updated slots: https://calendly.com/tech-demos.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 23, "FROM_EMAIL"],
+            [28, 48, "TO_EMAIL"],
+            [80, 93, "DATE_TIME"],
+            [98, 114, "DATE_TIME"],
+            [167, 196, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: partner@vc.com\nTo: founders@startup.com\nSubject: Series B Timing Adjustment\n\nHi Team,\n\nCan we move our March 1st funding discussion to March 8th afternoon?\nMy travel schedule changed. Availability: \nhttps://calendly.com/vc-partners.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 20, "FROM_EMAIL"],
+            [25, 44, "TO_EMAIL"],
+            [78, 94, "DATE_TIME"],
+            [99, 119, "DATE_TIME"],
+            [177, 207, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: official@city.gov\nTo: council@municipal.gov\nSubject: Public Hearing Date Change\n\nCouncil Members,\n\nRequest to reschedule the March 20th 6 PM hearing to March 27th 5:30 PM.\nCommunity center availability: https://cityscheduler.gov/hearings.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 23, "FROM_EMAIL"],
+            [28, 52, "TO_EMAIL"],
+            [95, 116, "DATE_TIME"],
+            [121, 143, "DATE_TIME"],
+            [185, 217, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: volunteer@charity.org\nTo: events@nonprofit.com\nSubject: Shift Change Request\n\nHi Coordinator,\n\nCan I move my Saturday 9 AM volunteer shift to Sunday afternoon?\nFamily obligations changed. Available slots: \nhttps://volunteer-portal.charity.org.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 28, "FROM_EMAIL"],
+            [33, 54, "TO_EMAIL"],
+            [93, 112, "DATE_TIME"],
+            [117, 133, "DATE_TIME"],
+            [187, 222, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: emily@businesshub.com\nTo: clientservices@partnerco.org\nSubject: Rescheduling Quarterly Review\n\nTeam,\n\nWe need to adjust our March 22nd 2 PM review session. Could we move this to either:\n- March 23rd 10 AM\n- March 24th 11:30 AM\nMy colleague Mark (mark.ops@businesshub.com) will join if I'm unavailable.\n\nPlease confirm availability by EOD tomorrow.\n\nBest,\nEmily",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.9,
+            "info_request": 0.8,
+            "delegation": 0.6
+        },
+        "entities": [
+            [6, 27, "FROM_EMAIL"],
+            [32, 61, "TO_EMAIL"],
+            [88, 107, "DATE_TIME"],
+            [144, 164, "DATE_TIME"],
+            [167, 189, "DATE_TIME"],
+            [231, 255, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: organizer@techsummit.io\nTo: speakers@techsummit.io\nSubject: Presentation Handoff\n\nDr. Chen,\n\nDue to travel disruptions, I must delegate your May 5th 4 PM keynote slot to \nProf. Alicia Norton (alicia.n@university.edu). She'll present our joint research \nvia https://techsummit.io/backup-stream.\n\nConfirm receipt and connection test by Friday.\n\nRegards,\nConference Team",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.5,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 28, "FROM_EMAIL"],
+            [33, 54, "TO_EMAIL"],
+            [116, 136, "DATE_TIME"],
+            [161, 185, "EMAIL"],
+            [214, 247, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: pm@devteam.com\nTo: stakeholders@projectx.com\nSubject: Sprint Planning Shift\n\nAll,\n\nWe're pushing back the April 3rd 9 AM planning meeting to April 5th 1 PM EST. \nThe Jira board will remain accessible at https://projectx.com/jira-dash.\n\nTeam leads: Please update your department calendars by Wednesday COB.\n\nPM Team",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.3,
+            "delegation": 0.2
+        },
+        "entities": [
+            [6, 21, "FROM_EMAIL"],
+            [26, 54, "TO_EMAIL"],
+            [85, 107, "DATE_TIME"],
+            [112, 135, "DATE_TIME"],
+            [193, 224, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: admin@healthconf.org\nTo: presenters@healthconf.org\nSubject: Session Time Modification\n\nResearchers,\n\nThe September 12th 3 PM clinical trials session will now occur on \nSeptember 14th 10:30 AM CET. Dr. Singh (raj.singh@medresearch.in) will \nhost via https://healthconf.org/session-14a.\n\nConfirm your availability by August 25th.\n\nConference Admin",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.9,
+            "info_request": 0.6,
+            "delegation": 0.7
+        },
+        "entities": [
+            [6, 28, "FROM_EMAIL"],
+            [33, 60, "TO_EMAIL"],
+            [97, 123, "DATE_TIME"],
+            [128, 156, "DATE_TIME"],
+            [183, 206, "EMAIL"],
+            [219, 253, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: legal@firm.com\nTo: client@business.com\nSubject: Case Review Time Change\n\nMr. Thompson,\n\nOur October 10th 1:30 PM consultation needs rescheduling due to court \nschedule conflicts. Available slots:\n- October 11th 9 AM\n- October 12th 3 PM\nParalegal Amy Chen (amy.chen@firm.com) can conduct initial review if needed.\n\nPlease advise.\n\nLegal Team",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.8,
+            "info_request": 0.9,
+            "delegation": 0.5
+        },
+        "entities": [
+            [6, 19, "FROM_EMAIL"],
+            [24, 41, "TO_EMAIL"],
+            [72, 97, "DATE_TIME"],
+            [168, 190, "DATE_TIME"],
+            [193, 216, "DATE_TIME"],
+            [236, 258, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: chair@university.edu\nTo: committee@academic.org\nSubject: Thesis Defense Coordination\n\nColleagues,\n\nI must delegate the November 15th 2 PM defense chair role to \nProf. Martinez (jmartinez@univ.edu). Dial-in details:\nPhone: +44-20-7946-0214\nPasscode: 789012\n\nAll documents available at https://academic.org/defense-portal.\n\nRegards,\nCommittee Chair",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.2,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 26, "FROM_EMAIL"],
+            [31, 54, "TO_EMAIL"],
+            [104, 126, "DATE_TIME"],
+            [145, 168, "EMAIL"],
+            [222, 255, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: events@startup.com\nTo: prteam@agency.com\nSubject: Launch Event Update\n\nTeam,\n\nMoving the December 1st product launch from 5 PM to 7:30 PM PST. \nBackup date: December 3rd 6 PM if weather issues occur. \nStream link remains https://startup.com/live-event.\n\nConfirm attendance list by November 28th.\n\nEvents Coordinator",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.7,
+            "info_request": 0.4,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 23, "FROM_EMAIL"],
+            [28, 45, "TO_EMAIL"],
+            [72, 95, "DATE_TIME"],
+            [100, 124, "DATE_TIME"],
+            [143, 168, "DATE_TIME"],
+            [212, 242, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: ceo@company.com\nTo: investors@ventures.com\nSubject: Q4 Briefing Reschedule\n\nInvestors,\n\nOur January 10th 4 PM briefing needs to shift due to merger developments. \nOptions:\n1) January 11th 9 AM\n2) January 12th 2 PM\nCFO Sarah Lin (sarah.finance@company.com) will present financials if I'm delayed.\n\nPlease select preference by EOD Friday.\n\nBest,\nCEO",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.9,
+            "info_request": 0.8,
+            "delegation": 0.6
+        },
+        "entities": [
+            [6, 21, "FROM_EMAIL"],
+            [26, 48, "TO_EMAIL"],
+            [79, 101, "DATE_TIME"],
+            [163, 185, "DATE_TIME"],
+            [188, 211, "DATE_TIME"],
+            [255, 283, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: hr@company.com\nTo: staff@company.com\nSubject: Safety Training Update\n\nAll Employees,\n\nThe February 14th 10 AM safety training will now be conducted by \nSafety Officer Tom Baker (tom.safety@company.com). \nJoin via https://company.com/training-room.\n\nComplete pre-test by February 10th.\n\nHR Department",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.3,
+            "delegation": 0.9
+        },
+        "entities": [
+            [6, 19, "FROM_EMAIL"],
+            [24, 41, "TO_EMAIL"],
+            [72, 95, "DATE_TIME"],
+            [139, 165, "EMAIL"],
+            [180, 212, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: secretary@corporation.com\nTo: executives@corporation.com\nSubject: Emergency Meeting Plans\n\nExecutives,\n\nThe March 8th emergency board meeting may move to March 9th if quorum \nisn't achieved. Dial-in: +1-212-555-0199 | Code: 4567AB\n\nLegal counsel Lisa Park (lisa.legal@firm.com) will brief regulations \neither way.\n\nConfirm attendance status by March 5th.\n\nCorporate Secretary",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.5,
+            "info_request": 0.7,
+            "delegation": 0.4
+        },
+        "entities": [
+            [6, 32, "FROM_EMAIL"],
+            [37, 65, "TO_EMAIL"],
+            [97, 119, "DATE_TIME"],
+            [124, 135, "DATE_TIME"],
+            [200, 222, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: symposium@science.edu\nTo: presenters@research.net\nSubject: Presentation Slot Modifications\n\nResearchers,\n\nDue to keynote speaker availability, all April 20th sessions will shift \nto April 21st. Check new schedule at https://science.edu/symposium-2024.\n\nDr. Nakamura (kenji@lab.jp) will host the rescheduled plenary session.\n\nConfirm receipt by April 15th.\n\nSymposium Committee",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.2,
+            "delegation": 0.3
+        },
+        "entities": [
+            [6, 30, "FROM_EMAIL"],
+            [35, 60, "TO_EMAIL"],
+            [105, 123, "DATE_TIME"],
+            [128, 143, "DATE_TIME"],
+            [186, 215, "MEETING_LINK"],
+            [230, 250, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: training@consulting.com\nTo: client@manufacturing.com\nSubject: Workshop Timing Revision\n\nTeam,\n\nThe May 5th process improvement workshop (originally 1 PM) needs to \nconclude by 3 PM. Alternatively, we can split into two sessions:\n- May 5th 9 AM to 11 AM\n- May 6th 1 PM to 3 PM\n\nConsultant Samir Patel (samir.p@consulting.com) can handle either format.\n\nPlease advise preferred option by Friday.\n\nTraining Lead",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.8,
+            "info_request": 0.9,
+            "delegation": 0.5
+        },
+        "entities": [
+            [6, 30, "FROM_EMAIL"],
+            [35, 61, "TO_EMAIL"],
+            [90, 104, "DATE_TIME"],
+            [143, 173, "DATE_TIME"],
+            [176, 207, "DATE_TIME"],
+            [210, 239, "DATE_TIME"],
+            [276, 303, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: globalops@corp.com\nTo: regional_managers@corp.com\nSubject: Time Zone Adjustment for All-Hands\n\nManagers,\n\nOur June 1st 8 AM GMT call conflicts with APAC holidays. New proposal:\nOption A: June 2nd 3 AM GMT\nOption B: June 2nd 8 PM GMT\nAPAC lead Priya Sharma (priya.apac@corp.in) will moderate either session.\n\nVote via Teams poll by May 25th.\n\nGlobal Ops",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.9,
+            "info_request": 0.7,
+            "delegation": 0.4
+        },
+        "entities": [
+            [6, 27, "FROM_EMAIL"],
+            [32, 62, "TO_EMAIL"],
+            [91, 111, "DATE_TIME"],
+            [149, 170, "DATE_TIME"],
+            [173, 194, "DATE_TIME"],
+            [231, 254, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: audit@firm.com\nTo: client@retailchain.com\nSubject: Revised Audit Schedule\n\nManagement,\n\nWe're adjusting the July 7-9 audit to July 10-12 due to inventory timing.\nLead auditor Michael Roy (michael.audit@firm.com) will send updated \nquestionnaire by June 30th.\n\nConfirm facility access remains available for new dates.\n\nAudit Team",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.3,
+            "delegation": 0.2
+        },
+        "entities": [
+            [6, 19, "FROM_EMAIL"],
+            [24, 47, "TO_EMAIL"],
+            [75, 89, "DATE_TIME"],
+            [94, 108, "DATE_TIME"],
+            [140, 165, "EMAIL"]
+        ]
+    },
+    {
+        "text": "From: emily@marketinggroup.com\nTo: client@xyzcompany.com\nSubject: Meeting Reschedule and Delegate Proposal\n\nHi Team,\n\nDue to an overlapping commitment, I might not be able to attend our scheduled meeting on Friday at 11 AM. However, I could make it later that afternoon, or on Monday at 9 AM if that works better for everyone.\n\nIf neither of these times works, I would like to suggest that my colleague, Sarah (sarah@marketinggroup.com), step in. She is fully briefed and can handle the agenda.\n\nLet me know what works best and if Sarah’s attendance is acceptable.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.6,
+            "info_request": 0.4,
+            "delegation": 0.9
+        },
+        "entities": [
+            [6, 29, "FROM_EMAIL"],
+            [34, 57, "TO_EMAIL"],
+            [126, 140, "DATE_TIME"],
+            [226, 244, "DATE_TIME"],
+            [251, 261, "DATE_TIME"],
+            [347, 366, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Sarah",
+            "delegate_email": "sarah@marketinggroup.com",
+            "original_time": "Friday at 11 AM",
+            "proposed_times": [
+                "Friday afternoon",
+                "Monday at 9 AM"
+            ]
+        }
+    },
+    {
+        "text": "From: jake@softwarecorp.com\nTo: client@techsolutions.com\nSubject: Schedule Change and Delegate Arrangement\n\nHi All,\n\nUnfortunately, I have a conflicting appointment next Thursday at 2 PM, which was our meeting time. I might be able to reschedule for Thursday at 4 PM, or Friday morning at 10 AM if that suits everyone better.\n\nIn case I’m unable to attend, I would like my colleague, Lisa (lisa@softwarecorp.com), to take over the meeting. She’s up to speed and will be able to present on my behalf.\n\nPlease let me know which time works best for you, or if we should stick with the original Thursday slot.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.7,
+            "info_request": 0.3,
+            "delegation": 0.8
+        },
+        "entities": [
+            [6, 29, "FROM_EMAIL"],
+            [34, 58, "TO_EMAIL"],
+            [118, 132, "DATE_TIME"],
+            [186, 196, "DATE_TIME"],
+            [202, 217, "DATE_TIME"],
+            [296, 313, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Lisa",
+            "delegate_email": "lisa@softwarecorp.com",
+            "original_time": "Thursday at 2 PM",
+            "proposed_times": [
+                "Thursday at 4 PM",
+                "Friday morning at 10 AM"
+            ]
+        }
+    },
+    {
+        "text": "From: lauren@consultingfirm.com\nTo: marketing@brandcorp.com\nSubject: Meeting Time Adjustments and Delegate Option\n\nHi Team,\n\nI just realized I might not be able to attend our meeting on Monday at 10 AM due to a potential scheduling conflict. I can try for Monday at 1 PM, or possibly Tuesday morning if that works for you.\n\nIf I’m unable to attend, I would like my associate, Brian (brian@consultingfirm.com), to step in. He is well-informed and can cover all points on the agenda.\n\nPlease confirm if the proposed times work or if we should keep the original time.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.7,
+            "info_request": 0.3,
+            "delegation": 0.9
+        },
+        "entities": [
+            [6, 30, "FROM_EMAIL"],
+            [35, 59, "TO_EMAIL"],
+            [111, 125, "DATE_TIME"],
+            [157, 167, "DATE_TIME"],
+            [172, 187, "DATE_TIME"],
+            [263, 286, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Brian",
+            "delegate_email": "brian@consultingfirm.com",
+            "original_time": "Monday at 10 AM",
+            "proposed_times": [
+                "Monday at 1 PM",
+                "Tuesday morning"
+            ]
+        }
+    },
+    {
+        "text": "From: nathan@techconsultants.com\nTo: management@corporategroup.com\nSubject: Meeting Reschedule and Delegate Assignment\n\nHello Team,\n\nDue to an urgent matter, I may not be able to attend our scheduled meeting on Thursday at 11 AM. I’m hoping to move it to Thursday afternoon or Friday morning if possible.\n\nIf I can’t make it at all, I’d like my colleague, David (david@techconsultants.com), to lead the meeting in my place. David is fully briefed and can address all the key points.\n\nPlease confirm the new timing or let me know if Thursday morning still works.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.7,
+            "info_request": 0.3,
+            "delegation": 0.9
+        },
+        "entities": [
+            [6, 32, "FROM_EMAIL"],
+            [37, 65, "TO_EMAIL"],
+            [117, 131, "DATE_TIME"],
+            [176, 190, "DATE_TIME"],
+            [195, 211, "DATE_TIME"],
+            [299, 321, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "David",
+            "delegate_email": "david@techconsultants.com",
+            "original_time": "Thursday at 11 AM",
+            "proposed_times": [
+                "Thursday afternoon",
+                "Friday morning"
+            ]
+        }
+    },
+    {
+        "text": "From: patricia@legalfirm.com\nTo: client@realestatecorp.com\nSubject: Meeting Rescheduling and Delegate Option\n\nHi there,\n\nI may have a conflict with the scheduled meeting next Tuesday at 9 AM, but I can attempt to make it depending on my prior commitments. Alternatively, I can meet on Tuesday at 3 PM or Wednesday at 10 AM.\n\nIn case I am unavailable, my colleague, Tom (tom@legalfirm.com), will be able to represent me and take over the discussion. Tom is prepared and can cover everything on the agenda.\n\nLet me know which time works best for you.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.7,
+            "info_request": 0.3,
+            "delegation": 0.8
+        },
+        "entities": [
+            [6, 30, "FROM_EMAIL"],
+            [35, 59, "TO_EMAIL"],
+            [124, 138, "DATE_TIME"],
+            [165, 175, "DATE_TIME"],
+            [181, 196, "DATE_TIME"],
+            [286, 309, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Tom",
+            "delegate_email": "tom@legalfirm.com",
+            "original_time": "Tuesday at 9 AM",
+            "proposed_times": [
+                "Tuesday at 3 PM",
+                "Wednesday at 10 AM"
+            ]
+        }
+    },
+    {
+        "text": "From: project.manager@buildcorp.com\nTo: contractors@site.com\nSubject: Site Meeting Adjustments\n\nTeam,\n\nDue to unexpected equipment delays, we need to adjust the October 10th 7 AM safety meeting. Options:\n1) October 11th 6:30 AM\n2) October 12th 7:30 AM\nIf I'm unavailable, site supervisor Mike (mike.site@buildcorp.com) will lead the meeting.\n\nPlease confirm your availability by EOD today.\n\nBest,\nProject Manager",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.8,
+            "info_request": 0.5,
+            "delegation": 0.6
+        },
+        "entities": [
+            [6, 34, "FROM_EMAIL"],
+            [39, 62, "TO_EMAIL"],
+            [116, 141, "DATE_TIME"],
+            [158, 181, "DATE_TIME"],
+            [184, 209, "DATE_TIME"],
+            [265, 292, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Mike",
+            "delegate_email": "mike.site@buildcorp.com",
+            "original_time": "October 10th 7 AM",
+            "proposed_times": [
+                "October 11th 6:30 AM",
+                "October 12th 7:30 AM"
+            ]
+        }
+    },
+    {
+        "text": "From: events@startup.com\nTo: prteam@agency.com\nSubject: Launch Event Timing\n\nHi PR Team,\n\nWe need to adjust the December 1st 5 PM launch event. Possible options:\n- December 2nd 6 PM\n- December 3rd 7 PM\nIf I'm unavailable, my co-founder Sarah (sarah@startup.com) will handle the event.\n\nLet me know which option works best.\n\nBest,\nEvents Lead",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.9,
+            "info_request": 0.7,
+            "delegation": 0.5
+        },
+        "entities": [
+            [6, 23, "FROM_EMAIL"],
+            [28, 45, "TO_EMAIL"],
+            [80, 103, "DATE_TIME"],
+            [138, 160, "DATE_TIME"],
+            [163, 185, "DATE_TIME"],
+            [249, 268, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Sarah",
+            "delegate_email": "sarah@startup.com",
+            "original_time": "December 1st 5 PM",
+            "proposed_times": [
+                "December 2nd 6 PM",
+                "December 3rd 7 PM"
+            ]
+        }
+    },
+    {
+        "text": "From: ceo@company.com\nTo: investors@ventures.com\nSubject: Q4 Briefing Changes\n\nInvestors,\n\nOur January 10th 4 PM briefing may need to shift. Options:\n1) January 11th 9 AM\n2) January 12th 2 PM\nIf I'm delayed, CFO Lisa (lisa.finance@company.com) will present the financials.\n\nPlease confirm your preference by EOD Friday.\n\nBest,\nCEO",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.7,
+            "info_request": 0.8,
+            "delegation": 0.6
+        },
+        "entities": [
+            [6, 21, "FROM_EMAIL"],
+            [26, 48, "TO_EMAIL"],
+            [79, 101, "DATE_TIME"],
+            [138, 160, "DATE_TIME"],
+            [163, 186, "DATE_TIME"],
+            [240, 268, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Lisa",
+            "delegate_email": "lisa.finance@company.com",
+            "original_time": "January 10th 4 PM",
+            "proposed_times": [
+                "January 11th 9 AM",
+                "January 12th 2 PM"
+            ]
+        }
+    },
+    {
+        "text": "From: hr@company.com\nTo: staff@company.com\nSubject: Training Session Adjustments\n\nAll,\n\nThe February 14th 10 AM safety training may need to move. Options:\n1) February 15th 9 AM\n2) February 16th 11 AM\nIf I'm unavailable, Safety Officer Tom (tom.safety@company.com) will conduct the session.\n\nPlease confirm your availability by February 10th.\n\nHR Team",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.8,
+            "info_request": 0.6,
+            "delegation": 0.5
+        },
+        "entities": [
+            [6, 19, "FROM_EMAIL"],
+            [24, 41, "TO_EMAIL"],
+            [72, 95, "DATE_TIME"],
+            [130, 153, "DATE_TIME"],
+            [156, 179, "DATE_TIME"],
+            [243, 269, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Tom",
+            "delegate_email": "tom.safety@company.com",
+            "original_time": "February 14th 10 AM",
+            "proposed_times": [
+                "February 15th 9 AM",
+                "February 16th 11 AM"
+            ]
+        }
+    },
+    {
+        "text": "From: legal@firm.com\nTo: client@business.com\nSubject: Case Review Rescheduling\n\nMr. Thompson,\n\nOur October 10th 1:30 PM consultation may need to move. Options:\n1) October 11th 9 AM\n2) October 12th 3 PM\nIf I'm unavailable, Paralegal Amy (amy.chen@firm.com) will handle the review.\n\nPlease advise your preference.\n\nLegal Team",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.9,
+            "info_request": 0.7,
+            "delegation": 0.6
+        },
+        "entities": [
+            [6, 19, "FROM_EMAIL"],
+            [24, 41, "TO_EMAIL"],
+            [72, 97, "DATE_TIME"],
+            [138, 160, "DATE_TIME"],
+            [163, 186, "DATE_TIME"],
+            [240, 262, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Amy",
+            "delegate_email": "amy.chen@firm.com",
+            "original_time": "October 10th 1:30 PM",
+            "proposed_times": [
+                "October 11th 9 AM",
+                "October 12th 3 PM"
+            ]
+        }
+    },
+    {
+        "text": "From: admin@healthconf.org\nTo: presenters@research.net\nSubject: Session Time Changes\n\nResearchers,\n\nThe September 12th 3 PM session may need to shift. Options:\n1) September 13th 10 AM\n2) September 14th 11 AM\nIf I'm unavailable, Dr. Singh (raj.singh@medresearch.in) will host.\n\nConfirm your availability by August 25th.\n\nConference Admin",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.8,
+            "info_request": 0.6,
+            "delegation": 0.5
+        },
+        "entities": [
+            [6, 28, "FROM_EMAIL"],
+            [33, 60, "TO_EMAIL"],
+            [97, 123, "DATE_TIME"],
+            [158, 183, "DATE_TIME"],
+            [186, 210, "DATE_TIME"],
+            [264, 287, "EMAIL"]
+        ],
+        "additional_info": {
+            "uncertainty": true,
+            "alternative_times_suggested": true,
+            "delegate_name": "Dr. Singh",
+            "delegate_email": "raj.singh@medresearch.in",
+            "original_time": "September 12th 3 PM",
+            "proposed_times": [
+                "September 13th 10 AM",
+                "September 14th 11 AM"
+            ]
+        }
+    },
+    {
+        "text": "From: pr@company.com\nTo: media@news.com\nSubject: Launch Event Time Change\n\nMedia Partners,\n\nWe're moving the product launch from Tuesday 10 AM to Wednesday 2 PM EST  \ndue to weather concerns. Updated details: https://company.com/media.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 20, "FROM_EMAIL"],
+            [25, 38, "TO_EMAIL"],
+            [75, 92, "DATE_TIME"],
+            [97, 117, "DATE_TIME"],
+            [169, 191, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: traveler@agency.com\nTo: airline@reservations.com\nSubject: Flight Change Request\n\nReservations Team,\n\nI need to change my December 14th 8 AM flight to December 15th 10 AM.\nAvailable options: https://airline.com/manage-booking.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 25, "FROM_EMAIL"],
+            [30, 55, "TO_EMAIL"],
+            [90, 113, "DATE_TIME"],
+            [118, 139, "DATE_TIME"],
+            [173, 203, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: student@uni.edu\nTo: advisor@department.edu\nSubject: Thesis Defense Date Change\n\nProfessor Lee,\n\nRequest to move my May 5th 2 PM defense to May 7th 10 AM.\nCommittee member conflict. Availability: \nhttps://uni-scheduling.edu/thesis.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 22, "FROM_EMAIL"],
+            [27, 51, "TO_EMAIL"],
+            [88, 104, "DATE_TIME"],
+            [109, 125, "DATE_TIME"],
+            [179, 210, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: buyer@properties.com\nTo: agent@realestate.com\nSubject: Home Tour Time Change\n\nHi Mark,\n\nCan we reschedule Friday's 3 PM showing to Saturday morning?\nUnexpected work conflict. Available times: \nhttps://calendly.com/home-tours.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 27, "FROM_EMAIL"],
+            [32, 53, "TO_EMAIL"],
+            [90, 104, "DATE_TIME"],
+            [109, 125, "DATE_TIME"],
+            [179, 208, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: host@webinar.com\nTo: attendees@training.com\nSubject: Workshop Time Adjustment\n\nParticipants,\n\nDue to technical issues, we're moving the March 8th 1 PM webinar  \nto March 10th 3 PM EST. Updated link: https://webinar.com/reschedule.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 1.0,
+            "info_request": 0.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 21, "FROM_EMAIL"],
+            [26, 48, "TO_EMAIL"],
+            [89, 107, "DATE_TIME"],
+            [112, 133, "DATE_TIME"],
+            [163, 193, "MEETING_LINK"]
+        ]
+    },
+    {
+        "text": "From: manager@company.com\nTo: assistant@company.com\nSubject: Please Handle Client Meeting Reschedule\n\nHi Alex,\n\nCan you reschedule my Thursday 2 PM client call to a later date?\nPlease check with the client and confirm the new time.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 24, "FROM_EMAIL"],
+            [29, 50, "TO_EMAIL"],
+            [92, 108, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: ceo@company.org\nTo: hr@company.org\nSubject: Assign Team Interviews\n\nHi HR Team,\n\nPlease coordinate the hiring interviews for next week and confirm the schedule.\nLet me know if any issues arise.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 20, "FROM_EMAIL"],
+            [25, 38, "TO_EMAIL"],
+            [108, 122, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: exec@finance.com\nTo: assistant@finance.com\nSubject: Schedule Q3 Planning Meeting\n\nHi Emily,\n\nPlease set up a Q3 planning session with the leadership team.\nCoordinate with them and confirm a time that works.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 21, "FROM_EMAIL"],
+            [26, 46, "TO_EMAIL"]
+        ]
+    },
+    {
+        "text": "From: manager@company.com\nTo: it@company.com\nSubject: System Upgrade Schedule\n\nHi IT Team,\n\nPlease coordinate the system upgrade for next month with minimal downtime.\nLet the team know in advance.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 24, "FROM_EMAIL"],
+            [29, 42, "TO_EMAIL"],
+            [83, 94, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: director@org.com\nTo: admin@org.com\nSubject: Coordinate Board Meeting\n\nHi Team,\n\nCan you schedule the quarterly board meeting?\nPlease check availability with the members.",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 0.0,
+            "delegation": 1.0
+        },
+        "entities": [
+            [6, 22, "FROM_EMAIL"],
+            [27, 40, "TO_EMAIL"]
+        ]
+    },
+    {
+        "text": "From: john.doe@company.com\nTo: scheduler@company.com\nSubject: Availability for Next Week's Meeting\n\nHi,\n\nCould you let me know what times are available for our project review next week?",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 1.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 26, "FROM_EMAIL"],
+            [31, 51, "TO_EMAIL"],
+            [103, 114, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: client@biz.com\nTo: support@biz.com\nSubject: Confirm Meeting Time\n\nHi Support Team,\n\nCould you confirm whether our Thursday 11 AM meeting is still scheduled?",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 1.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 19, "FROM_EMAIL"],
+            [24, 37, "TO_EMAIL"],
+            [87, 101, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: emily@company.com\nTo: admin@company.com\nSubject: Agenda for Strategy Meeting\n\nHi,\n\nCan you provide the agenda for our upcoming strategy meeting?",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 1.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 23, "FROM_EMAIL"],
+            [28, 41, "TO_EMAIL"]
+        ]
+    },
+    {
+        "text": "From: jake@startup.com\nTo: pa@executive.com\nSubject: Possible Reschedule?\n\nHi,\n\nWould it be possible to move our Monday 4 PM investor call to later in the week?",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 1.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 22, "FROM_EMAIL"],
+            [27, 43, "TO_EMAIL"],
+            [87, 101, "DATE_TIME"]
+        ]
+    },
+    {
+        "text": "From: support@tech.com\nTo: facilities@tech.com\nSubject: Room Booking Confirmation\n\nHi,\n\nIs Conference Room B available for our training session on August 12th at 3 PM?",
+        "cats": {
+            "acceptance": 0.0,
+            "decline": 0.0,
+            "reschedule": 0.0,
+            "info_request": 1.0,
+            "delegation": 0.0
+        },
+        "entities": [
+            [6, 22, "FROM_EMAIL"],
+            [27, 46, "TO_EMAIL"],
+            [107, 124, "DATE_TIME"]
+        ]
+    }
+]

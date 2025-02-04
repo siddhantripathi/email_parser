@@ -1,0 +1,10 @@
+{
+  "labels":[
+    "acceptance",
+    "decline",
+    "reschedule",
+    "info_request",
+    "delegation"
+  ],
+  "threshold":0.5
+}

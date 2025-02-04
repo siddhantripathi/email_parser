@@ -1,0 +1,26 @@
+{
+  "additional_info_keys": [
+    "uncertainty",
+    "alternative_times_suggested",
+    "delegate_name",
+    "delegate_email",
+    "original_time",
+    "proposed_times"
+  ],
+  "custom_patterns": {
+    "uncertainty": [
+      "high chance",
+      "depending on",
+      "might be able",
+      "not sure",
+      "possibly",
+      "tentative"
+    ],
+    "delegation": [
+      "associate.*step in",
+      "delegate to",
+      "will handle",
+      "take over"
+    ]
+  }
+}

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Parser</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --background: #f8fafc;
+            --text: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--background);
+            color: var(--text);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--primary);
+            font-size: 2.5rem;
+            animation: slideDown 0.5s ease-out;
+        }
+
+        #parseForm {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: vertical;
+            transition: border-color 0.2s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        button:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .result-container {
+            margin-top: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            overflow: hidden;
+            animation: slideUp 0.5s ease-out;
+        }
+
+        .result-preview {
+            padding: 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .result-field {
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .field-label {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .field-value {
+            padding: 0.75rem;
+            background: #f8fafc;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--text);
+            border-left: 3px solid var(--secondary);
+        }
+
+        .field-value.empty {
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .result-field:hover .field-value {
+            background: #f1f5f9;
+            transition: background 0.2s;
+        }
+
+        .result-full {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .result-full.expanded {
+            max-height: 1000px;
+        }
+
+        .toggle-btn {
+            width: 100%;
+            padding: 0.75rem;
+            background: #f1f5f9;
+            border: none;
+            color: var(--text);
+            font-size: 0.875rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-btn:hover {
+            background: #e2e8f0;
+        }
+
+        .toggle-btn i {
+            transition: transform 0.3s;
+        }
+
+        .toggle-btn.expanded i {
+            transform: rotate(180deg);
+        }
+
+        pre {
+            padding: 1.5rem;
+            margin: 0;
+            font-family: monospace;
+            font-size: 0.875rem;
+            background: #f8fafc;
+            overflow-x: auto;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .loading.active {
+            display: block;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        .human-readable {
+            padding: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .info-line {
+            display: flex;
+            margin-bottom: 1rem;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: var(--primary);
+            margin-right: 0.5rem;
+        }
+
+        .info-value {
+            color: var(--text);
+        }
+
+        .info-value.empty {
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .info-value.link {
+            color: var(--primary);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-10px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <h1>Email Parser</h1>
+    <form id="parseForm">
+        <textarea id="emailText" placeholder="Paste email text here..."></textarea>
+        <button type="submit">Parse Email</button>
+    </form>
+    <div class="loading">Processing...</div>
+    <div class="result-container" style="display: none;">
+        <div class="human-readable">
+            <div class="info-line">
+                <span class="info-label">Schedule time:</span>
+                <span class="info-value" id="time-value"></span>
+            </div>
+            <div class="info-line">
+                <span class="info-label">Response type:</span>
+                <span class="info-value" id="response-value"></span>
+            </div>
+            <div class="info-line">
+                <span class="info-label">Meeting link:</span>
+                <span class="info-value link" id="link-value"></span>
+            </div>
+            <div class="info-line">
+                <span class="info-label">Delegated to:</span>
+                <span class="info-value" id="delegate-value"></span>
+            </div>
+            <div class="info-line">
+                <span class="info-label">Notes:</span>
+                <span class="info-value" id="notes-value"></span>
+            </div>
+        </div>
+        <button class="toggle-btn">
+            Show Full JSON Response <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="result-full">
+            <pre></pre>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('parseForm').onsubmit = async (e) => {
+            e.preventDefault();
+            
+            document.querySelector('.loading').classList.add('active');
+            document.querySelector('.result-container').style.display = 'none';
+            
+            try {
+                const response = await fetch('/parse', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                    body: new URLSearchParams({
+                        'email_text': document.getElementById('emailText').value
+                    })
+                });
+                
+                const data = await response.json();
+                
+                // Format the proposed time to be more readable
+                const formatTime = (isoTime) => {
+                    if (!isoTime) return 'Not specified';
+                    const date = new Date(isoTime);
+                    return date.toLocaleString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: 'numeric'
+                    });
+                };
+
+                // Update human-readable values
+                document.getElementById('time-value').textContent = 
+                    formatTime(data.proposed_time);
+                document.getElementById('response-value').textContent = 
+                    data.reply_type ? data.reply_type.replace(/_/g, ' ') : 'Not specified';
+                
+                const linkElement = document.getElementById('link-value');
+                if (data.meeting_link) {
+                    linkElement.textContent = data.meeting_link;
+                    linkElement.onclick = () => window.open(data.meeting_link, '_blank');
+                } else {
+                    linkElement.textContent = 'Not specified';
+                    linkElement.onclick = null;
+                }
+                
+                document.getElementById('delegate-value').textContent = 
+                    data.delegate_to || 'Not specified';
+                document.getElementById('notes-value').textContent = 
+                    data.additional_notes || 'No additional notes';
+
+                // Add empty class for styling
+                document.querySelectorAll('.info-value').forEach(el => {
+                    el.classList.toggle('empty', 
+                        el.textContent === 'Not specified' || 
+                        el.textContent === 'No additional notes'
+                    );
+                });
+
+                // Update full JSON response
+                document.querySelector('.result-full pre').textContent = 
+                    JSON.stringify(data, null, 2);
+                    
+                document.querySelector('.result-container').style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                document.querySelector('.human-readable').innerHTML = 
+                    '<div class="error">Error processing request</div>';
+            } finally {
+                document.querySelector('.loading').classList.remove('active');
+            }
+        };
+
+        document.querySelector('.toggle-btn').onclick = (e) => {
+            const btn = e.currentTarget;
+            const fullResult = document.querySelector('.result-full');
+            
+            btn.classList.toggle('expanded');
+            fullResult.classList.toggle('expanded');
+            
+            btn.innerHTML = btn.classList.contains('expanded') 
+                ? 'Hide Full JSON Response <i class="fas fa-chevron-up"></i>'
+                : 'Show Full JSON Response <i class="fas fa-chevron-down"></i>';
+        };
+    </script>
+</body>
+</html> 
